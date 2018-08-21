@@ -15,10 +15,6 @@ var option = {
   scrollbars: true, // スクロールバーを表示するか
 };
 
-$(function(){
-  $.scrollify(option);  // scrollifyの実行
-});
-
 function copy_to_clipboard(text){
   var target = document.createElement("textarea");
   target.value = text;
