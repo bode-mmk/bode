@@ -5,132 +5,160 @@
     <meta http-equiv="Content-Language" content="ja" />
     <meta http-equiv="Content-Style-Type" content="text/css" />
     <meta http-equiv="Content-Script-Type" content="text/javascript" />
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+    <script src="core.js"></script>
     <link rel="stylesheet" type="text/css" href="css/design.css">
     <title>ぼでーの説明書</title>
   </head>
   <body>
-  <section class="scetion section-pink js-section" data-section-name="section1">
-    <div class="section-content">
-      <h2>ここは一体何なんだ</h2>
-      <div class="affected">
-        <p>
-          ぼでーのただの自己紹介ページっすね<br>
-          桃華を愛していて、桜の頃と春霞が好き過ぎる<br>
-          ただのｴﾝｷﾞﾆｱです<br>
-          奈良県に住んでます、いつも京都とを往復してます<br>
-          下にスクロールすると色々見れます<br>
-        </p>
-      </div>
-    </div>
-  </section>
-  <section class="section section-dere js-section" data-section-name="section2">
-    <div class="section-content">
-      <h1>ぼでー in シンデレラガールズ</h1>
-      <h2>担当達</h2>
-      <h1>櫻井桃華</h1>
-      <div class="leftside">
-        <img border="1" src="image/momoka.png" width="900">
-      </div>
-      <h1>春霞</h1>
-      <h1>浜口あやめ 小早川紗枝 道明寺歌鈴 依田芳乃 脇山珠美</h1>
-      <div class="leftside">
-        <img border="1" src="image/harugasumi.png" width="900">
-      </div>
-      <h2>※各種画像をクリックするとクリップボードにIDをコピーします</h2>
-      <div class="leftside">
-        <a href="javascript:void(0);" onclick="copy_to_clipboard('998693345');"><img border="1" src="image/dere_profile.png" width="900"></a>
-      </div>
-      <div class="leftside">
-        <a href="javascript:void(0);" onclick="copy_to_clipboard('53d1b866af');"><img border="1" src="image/dere_namecard.png" width="900"></a>
-      </div>
-      <div class="leftside">
-        <a href="javascript:void(0);" onclick="copy_to_clipboard('134995328');"><img border="1" src="image/moba_profile.png" width="900"></a>
-      </div>
-      <a href="https://twitter.com/search?q=%23こいついつも桜の頃聴いてんな" target="_blank"><h1 class="skyblue">#こいついつも桜の頃聴いてんな</h1></a>
-      <h2>桜の頃を無限に聴くんだよ</h2>
-      <a href="https://twitter.com/search?q=%23ももかりん推奨委員会" target="_blank"><h1 class="skyblue">#ももかりん推奨委員会</h1></a>
-      <h2>ももかりんはイイぞ</h2>
-      <a href="https://twitter.com/search?q=%23桜の頃考察委員会" target="_blank"><h1 class="skyblue">#桜の頃考察委員会</h1></a>
-      <h2>桜の頃考察委員会、その背景考察まとめは以下</h2>
-      <a href="https://twitter.com/i/moments/1021419275259543558" target="_blank">
-        <h2>桜の頃に想いを馳せる</h2>
-        <img border="1" src="image/sakuranokousatu.jpg" width="900">
-      </a>
-    </div>
-  </section>
-  <section class="section section-765 js-section" data-section-name="section3">
-    <div class="section-content">
-      <h1>ぼでー in シアターデイズ</h1>
-      <h1>担当</h1>
-      <h1>徳川まつり</h1>
-      <h2>※画像をクリックでゲームIDをクリップボードにコピーします</h2>
-      <div class="leftside">
-        <a href="javascript:void(0);" onclick="copy_to_clipboard('LRZKUSK9');">
-          <img border="1" src="image/td_profile.png" width="900">
-        </a>
-      </div>
-      <h1>徳川ぼでり……？</h1>
-    </div>
-  </section>
-  <section class="section section-other js-section" data-section-name="section4">
-    <div class="section-content">
-      <h1>ぼでー in りある</h1>
-      <h1>#imas_hack 関西 Event Organizer</h1>
-      <a href="https://imas.connpass.com/" target="_blank"><h1>IM@Study</h1></a>
-      <br>
-      <h1>NITNC(旧NNCT) M科卒 元委員長<br></h1>
-      <h1>Programming History</h1>
+  <header class="page-header">
+    <h1 class="bode-logo"><img src="image/tokemomoka.png" alt="tokemomoka"></h1>
+    <nav class="bode-navi">
+      <ul class="bode-navi-menu">
+        <li class="bode-navi-menu-item"><a href="#about">About</a></li>
+        <li class="bode-navi-menu-item"><a href="#imas">アイマス/シンデレラ</a></li>
+        <li class="bode-navi-menu-item"><a href="#oshiro">御城プロジェクト:RE</a></li>
+        <li class="bode-navi-menu-item"><a href="#gemini">ジェミニシード</a></li>
+        <li class="bode-navi-menu-item"><a href="#ark">アークオーダー</a></li>
+      </ul>
+      <ul class="bode-navi-menu">
+        <li class="bode-navi-menu-item"><a href="#youkai">妖怪百姫たん！</a></li>
+        <li class="bode-navi-menu-item"><a href="#uchihime">ウチ姫</a></li>
+        <li class="bode-navi-menu-item"><a href="#others">その他のゲーム達</a></li>
+      </ul>
+      <ul class="bode-navi-menu">
+        <li class="bode-navi-menu-item"><a href="#puyo">ぷよぐやみんぐ</a></li>
+        <li class="bode-navi-menu-item"><a href="#shumi">趣味・音楽</a></li>
+        <li class="bode-navi-menu-item"><a href="#kyouchama">Love Momoka Artist</a></li>
+      </ul>
+    </nav>
+  </header> 
+  <div class="back"><img src="image/back.png" width="800" height="400" alt="back"></div>
+  <div class="content">
+    <div class="content-box">
+      <h2 id="about">About</h2>
       <p>
-        Development for package application by C++ while 3 years.<br>
-        Now I'm using PHP for server-side.<br>
+        ぼでーの自己紹介ページです<br>
+        やってるゲームのフレコとかは全てここに書いてます<br>
+        エンジニアやってるんですがサイトデザイン下手くそなので不便かも<br>
+        とにかく和服と可愛いものが好き。好みは幼い見た目になりがち<br>
+      </p>
+    </div>
+    <div class="content-box">
+      <h2 id="imas">アイマス/シンデレラ</h2>
+      <p>
+        アイマスの活動は現在シンデレラガールズのみやってます<br>
+        櫻井桃華、春霞（浜口あやめ、小早川紗枝、道明寺歌鈴、依田芳乃、脇山珠美）の計六人を担当<br>
+        気になるアイドルはいっぱい<br>
+        自分のやりたいことをやれる時にやってるだけです<br>
+        マイペースでやってるので知らないネタやついていけないことがたくさんあります<br>
+        デレステとモバのIDは以下<br>
         <br>
-        Love: C++, Perl, Elixir, Rust, Javascript...and more.<br>
-        Programming from 14 years old.<br>
-        <br>
-        <h1>Github<br>
-        <a href="https://github.com/bode-mmk" target="_blank">https://github.com/bode-mmk</a></h1>
+        <img src="image/dere_profile.png" width="100%">
+        <img src="image/moba_profile.png" width="100%">
       </p>
-      <br>
-      <h1>Interesting</h1>
-      <p>
-        複雑系、宇宙、Programming言語、竜巻、流体力学<br>
-      </p>
-      <br>
-      <h1>Trip</h1>
-      <a href="https://twitter.com/search?q=%23ももさんぽ" target="_blank"><h1>#ももさんぽ</h1></a>
-      <a href="https://twitter.com/i/moments/1005285002911801344" target="_blank"><h1>ももさんぽその1</h1></a>
-      <a href="https://twitter.com/i/moments/1015993306667290624" target="_blank"><h1>ぼでーの神社探訪</h1></a>
-      <br>
-      <h1>Music</h1>
-      <p>
-        Hardcore Techno(Mainstream Hardcore), Hard Style, 雅楽(東儀秀樹)<br>
-        B'z, T.M.Revolution, GRANRODEO, 石川智晶, Shiggy Jr., BRADIO<br>
-      </p>
-      <h1>Like Contents</h1>
-      <p>
-        干物妹！うまるちゃん, くまみこ, ぎんぎつね<br>
-        M.S.S Project<br>
-        映画:ボーン・シリーズ, ザ・シューター~極大射程~<br>
-        お祭りと花火, 神社, 桜, 美しい街並み, どきどきする道<br>
-      </p>
-      <br>
-      <h1>The reason of ぼでー</h1>
-      <p>
-        学生時代、友達とやたら良い発音で振り付きで"ばでぃ"ってやってたら鍛えてたのもありそれがあだ名になった<br>
-        ウチ姫というゲームをやる時、少し捩り日本語読みで"ぼでー"とした<br>
-        学生時代の友人はみんな"ばでぃ"と呼ぶ。"ばでぃ"も"ぼでー"も正しい表記はどちらもひらがな<br>
-        LINEの名前は"ばでぃ"にしてある。<br>
-        ちなみにアクセントはどこに置いてもいい。<br>
-        地方とかリア友でもアクセントの置き方は変わる。<br>
-        イラストをぼでーの桃華アイコンっぽくアレンジすることを、"ぼでないず"という。<br>
-      </p>
-      <br>
-      <h1>Love Momoka Artist</h1>
-      <a href="https://twitter.com/kyou023" target="_blank">きょうちゃま</a>
-      <br>
     </div>
-  </section>
-  </body>
-  <script src="https://unpkg.com/scrollreveal/dist/scrollreveal.min.js"></script>
-  <script src="core.js"></script>
+    <div class="content-box">
+      <h2 id="oshiro">御城プロジェクト:RE～CASTLE DEFENSE～</h2>
+      <p>
+        のんびりとやってます。Android版でやってましたが、今はDMM版に引き継いでDMM版でやってます<br>
+        アイコン見て一目惚れした犬山城が一発で来てくれたのとタワーディフェンスが面白くてドハマリ<br>
+        彦根城のリアルイベントは行きました<br>
+        肝心のリアルお城の知識は人並みかそれ以下。歴史が苦手なのでこれから勉強します<br>
+        推しは以下の画像の通り<br>
+        <br>
+        <img src="image/oshiro.png" width="100%">
+        ペテルゴフ宮殿彼女にしたい<br>
+      </p>
+    </div>
+    <div class="content-box">
+      <h2 id="gemini">ジェミニシード</h2>
+      <p>
+        もちろん(?)DMM X版でやってます<br>
+        テッサが推しだったけどトワルルが来てからの鞍替えは俊足の翁<br>
+        <s>(ベッドシーンがマジで犯罪)</s><br>
+        キャラ性とストーリー、運営がメタで遊んでたりしてるのも平和で楽しい<br>
+        重めのストーリーは、オタクを幾度となく泣かせた。アンジェリカ……<br>
+        マリナの「魚が逃げてる」と「やりました！やったんでちよ！必死に！」はマジで定期的に聞きたくなるよな<br>
+        IDやメインの編成は以下の通り<br>
+        <img src="image/gemi_hensei.png" width="100%">
+        <img src="image/gemi_fure.png" width="100%">
+      </p>
+    </div>
+    <div class="content-box">
+      <h2 id="ark">アークオーダー</h2>
+      <p>
+        事前登録してリリースされた通知を忘れててリリース後一週間目から始めました<br>
+        魑魅魍魎姉妹とヘルちゃんが全てのモチベーション、可愛い<br>
+        本家wikiで一目惚れした八咫烏ちゃんが来るまでは、とりあえず真面目にやると思います<br>
+        スルメゲーなので細々続けるかなぁ<br>
+        フレコはこちらです<br>
+        <br>
+        <img src="image/ark.jpg" width="100%">
+      </p>
+    </div>
+    <div class="content-box">
+      <h2 id="youkai">妖怪百姫たん！</h2>
+      <p>
+        和服ロリがほしい。その欲求のみで始めたゲームです<br>
+        座敷童子と小豆洗いあたりが好き。このゲーム性癖って感じする<br>
+        そんなに真面目にはやってません。やりたい時にやりたいだけやってます<br>
+        <br>
+        <img src="image/youkai.jpg" width="100%">
+      </p>
+    </div>
+    <div class="content-box">
+      <h2 id="uchihime">ウチ姫</h2>
+      <p>
+        友達に誘われて一番最初にやったソシャゲですね<br>
+        人生で一番最初に真剣にランカーしたゲームでもあります。全3位はいい思い出<br>
+        今では半分引退勢です。このゲームいつになったらガチャがもう少し優しくなるんだ<br>
+        推しは花咲 恵ちゃん<br>
+        <img src="image/uchi.jpg" width="100%">
+      </p>
+    </div>
+    <div class="content-box">
+      <h2 id="others">その他のゲーム達</h2>
+      <p>
+        雑食なのでいろんなソシャゲをやってます<br>
+        スタリラ、グラブル、きらファン、プリコネR、あやらぶ<br>
+        ログイン勢なのでフレコなどはのせてません<br>
+        もし知りたい方がいれば声をかけてくださいまし<br>
+      </p>
+    </div>
+    <div class="content-box">
+      <h2 id="puyo">ぷよぐやみんぐ</h2>
+      <p>
+        When 14 years old, I started prgramming life with VBS.<br>
+        Perl, C++, Elixir, Rust, JavaScript, PHP, Java, OCaml, Haxe... and more<br>
+        最近はもっぱらRust、Elixir、Haxeにお熱<br>
+        コードを書くことに性的快感を感じる<br>
+      </p>
+    </div>
+    <div class="content-box">
+      <h2 id="shumi">趣味・音楽</h2>
+      <p>
+        神社や自然が織りなす景色、街並みや道が好きなので昼夜問わず散歩によくいきます<br>
+        <a href="https://twitter.com/i/moments/1015993306667290624" target="_blank">ぼでーの神社探訪</a><br>
+        あまり怖い事を恐れないので一人でガンガン夜の街を歩いたりしますが、幽霊より結局人のが怖いです<br>
+        <br>
+        可愛いものが大好きなのでちょっとしたコンテンツとかなんか良くわからないキャラとかにもセンサーは反応します<br>
+        和服が好きなので和服だったら何であろうととりあえず視界に入れる癖がある<br>
+        <br>
+        音楽の趣味はブレブレ<br>
+        GabberからのHardcore、Hardstyleを主に好み、ダンスミュージック以外なら<br>
+        和楽器バンドを中心として色々聴く。和楽器とか和風なものがここでもやっぱり好き<br>
+        「ワタシ、至上主義」をぜひとも一度聴いてほしい<br>
+        <br>
+        お祭りが好き。花火も好き。桜とか蛍とか、マジでその時限定でしか見れないものにとても惹かれる<br>
+        YoutubeはM.S.S ProjectとQuizKnockしか最近は見てないや<br>
+      </p>
+    </div>
+    <div class="content-box">
+      <h2 id="kyouchama">Love Momoka Artist</h2>
+      <p>
+        <a href="https://twitter.com/kyou023" target="_blank">きょうちゃま</a>
+      </p>
+    </div>
+  </div>
 </html>
