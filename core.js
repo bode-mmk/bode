@@ -15,3 +15,12 @@ $(function(){
   
   _window.trigger('scroll');
 });
+
+function copy_to_clipboard(text){
+  var target = document.createElement("textarea");
+  target.value = text;
+  document.body.appendChild(target);
+  target.select();
+  document.execCommand('copy');
+  target.parentElement.removeChild(target);
+}
